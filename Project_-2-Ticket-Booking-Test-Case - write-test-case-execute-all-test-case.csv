@@ -1,0 +1,184 @@
+,Project Name:,Movie Ticket Booking Web Application,,,,,
+,Role,,,,,,
+,Feature Name:,Ticket Booking,,,,,
+,Reference Document:,,,,,,
+,Created By:,Sabina Yeasmin,,,,,
+,Updated By:,,,,,,
+,Date of Creation:,17 May 2025,,,,,
+,Number of  cases:,13,,,,,
+,Passed,12,,,,,
+,Failed,1,,,,,
+,,,,,,,
+#,TEST CASE ID, CASE TITLE, STEPS, DATA,EXPECTED RESULT,ACTUAL RESULT,QA STATUS
+1,TC-TB-01,Verify ticket booking is successful with valid data in all required fields and a valid promo code.,"1. Navigate to the ticket booking page
+2. Enter a valid Number of Tickets
+3. Select valid Ticket Class
+4. Select valid registered user
+5. Enter a valid Promo Code
+6. Click on the ""Book Now"" button.
+","1. Visit Url:  https://muntasir101.github.io/Movie-Ticket-Booking/
+2. Number of Tickets: 2
+3. Ticket Class: Silver $750
+4. Registered user: Yes
+5. Promo Code: PROMO2025
+6. N/A","If the user is registered and the promo is PROMO2025, a 30% discount is applied,Final Amount should be $1050
+
+Calculation: (750 × 2)=1500  (1500 × 30%)
+Final Amount: =1050.00","The total fare was accurately reduced by 30%.
+
+Booking Successful!
+Tickets: 2
+Total Price: ₹1500
+Discount: ₹450.00
+Final Amount: ₹1050.00",Passed
+2,TC-TB-02,Verify ticket booking is unsuccessful when an invalid number of tickets is entered.,"1. Navigate to the ticket booking page
+2. Enter a invalid Number of Tickets
+3. Select valid Ticket Class
+4. Select valid registered user
+5. Enter a valid Promo Code
+6. Click on the ""Book Now"" button.
+","1.Visit Url:  https://muntasir101.github.io/Movie-Ticket-Booking/
+2.Number of Tickets: 11
+3.Ticket Class: Platinum $1500
+4.Registered user: Yes
+5.Promo Code: PROMO2025
+6.N/A","System displays an appropriate validation or error message such as:""Please enter a valid number of tickets (1–10).""","System displayed: ❌ ""Please enter a number between 1 and 10.""
+",Passed
+3,TC-TB-03,Verify ticket booking is unsuccessful in applying discount when an invalid promo code is entered.,"1. Navigate to the ticket booking page
+2. Enter a valid Number of Tickets
+3. Select valid Ticket Class
+4. Select valid registered user
+5. Enter a invalid Promo Code
+6. Click on the ""Book Now"" button.
+","1.Visit Url:  https://muntasir101.github.io/Movie-Ticket-Booking/
+2.Number of Tickets: 3
+3.Ticket Class: Regular $500
+4.Registered user: Yes
+5.Promo Code: PROMO2026
+6.N/A","If the user is registered but promo is invalid, a 10% discount is applied,Final Ammount should be $1350.
+
+Calculation: (500 × 3)=1500  (1500 × 10%)
+Final Amount: =1350.00","System correctly applied a 10% discount based on registered status despite invalid promo.
+
+Booking Successful!
+Tickets: 3
+Total Price: ₹1500
+Discount: ₹150.00
+Final Amount: ₹1350.00",Passed
+4,TC-TB-04,Verify ticket booking is unsuccessful when an invalid or unregistered user is selected.,"1. Navigate to the ticket booking page
+2. Enter a valid Number of Tickets
+3. Select valid Ticket Class
+4. Select invalid registered user
+5. Enter a valid Promo Code
+6. Click on the ""Book Now"" button.
+","1.Visit Url:  https://muntasir101.github.io/Movie-Ticket-Booking/
+2.Number of Tickets: 7
+3.Ticket Class: Gold $1000
+4.Registered user: No
+5.Promo Code: PROMO2025,
+6.N/A","If the user is unregistered but uses PROMO2025, a 5% discount is applied,Final Amount should be $6650.
+
+Calculation: (1000 × 7)=7000  (7000 × 5%)
+Final Amount: =6650.00","Booking completed successfully with a 5% discount.
+
+Booking Successful!
+Tickets: 7
+Total Price: ₹7000
+Discount: ₹350.00
+Final Amount: ₹6650.00",Passed
+5,TC-TB-05,Verify ticket booking is unsuccessful when both the user and promo code are invalid.,"1. Navigate to the ticket booking page
+2. Enter a valid Number of Tickets
+3. Select valid Ticket Class
+4. Select invalid registered user
+5. Enter a invalid Promo Code
+6. Click on the ""Book Now"" button.","1.Visit Url:  https://muntasir101.github.io/Movie-Ticket-Booking/
+2.Number of Tickets: 4
+3.Ticket Class: VIP $2000
+4.Registered user: No
+5.Promo Code: PROMO2027
+6.N/A","If neither applies, 0%  discount is granted,Final Amount should be $8000.
+
+Calculation: (2000 × 4)=8000  (8000 × 0%)
+Final Amount: =8000.00","Booking completed successfully with 0% discount.
+
+Booking Successful!
+Tickets: 4
+Total Price: ₹8000
+Discount: ₹0.00
+Final Amount: ₹8000.00",Passed
+6,TC-TB-06,Verify that the amount is displayed with a dollar sign ($),"1. Navigate to the ticket booking page
+2. Enter a valid Number of Tickets
+3. Select valid Ticket Class
+4. Select valid registered user
+5. Enter a valid Promo Code
+6. Click on the ""Book Now"" button.
+","1. Visit Url:  https://muntasir101.github.io/Movie-Ticket-Booking/
+2. Number of Tickets: 2
+3. Ticket Class: Silver $750
+4. registered user: Yes
+5. Promo Code: PROMO2025
+6. N/A","The amount should be prefixed with a dollar sign $, e.g., $1050.","Unsuccessful amount has been be prefixed with a rupee sign ₹, e.d.g.e., ₹1050.",Failed
+7,TC-TB-07,Validate form behavior when all fields are left blank.,"1. Navigate to the Movie Ticket Booking page.
+2. Ensure all input fields (Number of Tickets, Ticket Class, Registered User, Promo Code) are blank or default.
+3. Click the ""Book Now"" button.",All input fields left empty,Validation messages should appear next to required fields,The form does not submit.,Passed
+8,TC-TB-08,Validation on entering ticket count as 0,"1. Navigate to the ticket booking page
+2. Enter a invalid Number of Tickets
+3. Select valid Ticket Class
+4. Select valid registered user
+5. Enter a valid Promo Code
+6. Click on the ""Book Now"" button.
+","1.Visit Url:  https://muntasir101.github.io/Movie-Ticket-Booking/
+2.Number of Tickets: 0
+3.Ticket Class: Platinum $1500
+4.Registered user: Yes
+5.Promo Code: PROMO2025
+6.N/A",Ticket count must be between 1 and 10. or Please enter at least 1 ticket.,This is logically incorrect and indicates missing front-end validation for minimum ticket count.,Passed
+9,TC-TB-09,Validation for non-numeric input in ticket count field.,"1. Navigate to the ticket booking page
+2.Open the Movie Ticket Booking form.
+3.Enter the text ""abc"" in the Number of Tickets field.
+4.Select valid options for Ticket Class and Registered User.
+5.Enter a valid promo code or leave it blank.
+6.Click the ""Book Now"" button.","1.Visit Url:  https://muntasir101.github.io/Movie-Ticket-Booking/
+2.Number of Tickets: ""abc"" (or any non-numeric string)
+3.Ticket Class: ""Gold - $1000""
+4.Registered User: ""Yes""
+5.Promo Code: ""PROMO2025"" (optional)
+6.N/A",User should be Possibly clear or restrict the input to numeric only.,Successful restrict the input to numeric only.,Passed
+10,TC-TB-10,Validation for empty ticket class selection.,"1.Open the Movie Ticket Booking form.
+2.Enter 2 in the Number of Tickets field.
+3.Do not select any value from the Ticket Class dropdown.
+4.Select ""Yes"" for Registered User.
+5.Optionally, enter a valid promo code.
+6.Click the ""Book Now"" button.","1.Visit Url:  https://muntasir101.github.io/Movie-Ticket-Booking/
+2.Number of Tickets: 2
+3.Ticket Class: (Leave blank / default placeholder like “--Select--”)
+4.Registered User: Yes
+5.Promo Code: ""PROMO2025"" (optional)
+6. N/A","User should Please select a ticket class.
+",Successful message has been shown select a ticket class. ,Passed
+11,TC-TB-11,Verify XSS Injection via Promo Code Input.,"1.Navigate to the Movie Ticket Booking form.
+2.Enter 2 in the Number of Tickets field.
+3.Select Silver from the Ticket Class dropdown.
+4.Enter <script>alert('XSS')</script> in the Promo Code field.
+5.Click on the ""Book Now"" button.","1.Visit Url:  https://muntasir101.github.io/Movie-Ticket-Booking/
+2.Number of Tickets: 2
+3.Ticket Class: Silver
+4.Promo Code: <script>alert('XSS')</script>
+5. N/A",The application should NOT execute any scripts.,Successful The application should NOT execute any scripts.,Passed
+12,TC-TB-12,Verify Price and Currency Display in Booking Summary.,"1. Navigate to the ticket booking page
+2. Enter a valid Number of Tickets
+3. Select valid Ticket Class
+4. Select valid registered user
+5. Enter a valid Promo Code
+6. Click on the ""Book Now"" button.
+","1. Visit Url:  https://muntasir101.github.io/Movie-Ticket-Booking/
+2. Number of Tickets: 2
+3. Ticket Class: Silver $750
+4. Registered user: Yes
+5. Promo Code: PROMO2025
+6. N/A",Amount values should be displayed with consistent currency sign.,Successful Amount values has been displayed with consistent currency sign.,Passed
+13,TC-TB-13, Verify missing currency symbol in pricing (edge case),"1. Navigate to the ticket booking page
+2.Remove or override the currency symbol in dropdown value (dev-side test).
+3.Click Book Now.
+",,"Summary should still include currency symbol before each amount.
+",The symbol is correctly placed before the amount.,Passed
