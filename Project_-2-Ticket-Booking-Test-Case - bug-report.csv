@@ -1,0 +1,10 @@
+Bug Report,,,,,,,,
+"Project Name: Movie Ticket Booking Web Application
+Report Created By:  Sabina Yeasmin
+Report Creation Date: 17 May 2025
+Number of Bugs: 01",,,,,,,,
+Bug ID,Title,Description,Steps to reproduce,Expected result,Actual result,Severity,Priority,Attachement
+Bug-001, Dollar Sign Not Displayed with Amount.,The amount field on the transaction/payment view is not prefixed with a dollar sign ($). ,"1.Login to the system as movie ticket booking
+2.Navigate to the Transactions or Payments page.
+3.Observe the amount column/value for any entry.
+4.Click book now.","Amounts should be displayed in proper currency format with a dollar sign prefix (e.g., $1050.00).","Amounts are displayed without a dollar sign, e.g., instead of ₹1050.00.",Medium,High,Doller Sign Issue
